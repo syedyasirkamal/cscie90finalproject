@@ -1,5 +1,3 @@
-#!/bin/bash
-set -xe
 
 name: Python application
 

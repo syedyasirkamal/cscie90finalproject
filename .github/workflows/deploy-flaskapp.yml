@@ -22,6 +22,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Checkout Repository
+        with:
+          path: main
 
       - uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -39,7 +41,7 @@ jobs:
 
       - name: Build and Package Python
         id: package
-        working-directory: main/${{ env.applicationfolder }}
+        working-directory: ${{ env.applicationfolder }}
         run: $GITHUB_WORKSPACE/.github/scripts/build-python.sh
 
       - name: Upload Artifact to s3
