@@ -37,11 +37,7 @@ jobs:
       - name: chmod
         run: chmod -R +x ./.github
 
-
       - name: Build and Package Python
-      - uses: actions/checkout@v2
-        with:
-          path: main
         id: package
         working-directory: ${{ env.applicationfolder }}
         run: $GITHUB_WORKSPACE/.github/scripts/build-python.sh
