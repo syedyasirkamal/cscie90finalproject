@@ -39,7 +39,7 @@ jobs:
 
       - name: Build and Package Python
         id: package
-        working-directory: ${{ env.applicationfolder }}
+        working-directory: main/${{ env.applicationfolder }}
         run: $GITHUB_WORKSPACE/.github/scripts/build-python.sh
 
       - name: Upload Artifact to s3
